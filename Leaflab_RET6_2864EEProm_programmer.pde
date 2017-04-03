@@ -18,16 +18,22 @@
 // before anything is written.
 //
 
+//yuanb:
 //The following code is ported and tested on leaflabs Maple RET6
 //Works for reading 2764, reading and writting of 2864
+//April 02, 2017
 
-const char version_string[] = {"EEPROM Version=0.01"};
+
+const char version_string[] = {"EEPROM Version=0.01, leaflabs RET6"};
 
 const char hex[] = {
   '0', '1', '2', '3', '4', '5', '6', '7',
   '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'
 };
 
+//Connect the following EEPROM pins to named GPIO pins on RET6 board.
+//Check this link for RET6 master pin map
+//http://docs.leaflabs.com/static.leaflabs.com/pub/leaflabs/maple-docs/latest/hardware/maple-ret6.html#master-pin-map
 #define PIN_A12 10
 #define PIN_A11 4
 #define PIN_A10 3
@@ -294,8 +300,9 @@ void ReadString()
         g_cmd[i++] = c;
         g_cmd[i] = 0;
       }
-    }
+    } 
   } 
+  //The serial monitor on Maple IDE can not send LF, so use ']' as line feed substitute, i.e. "V]" - display version information.
   while (c != 10 && c!= ']');
 }
 
