@@ -77,11 +77,11 @@ const char hex[16] = {
 #define PIN_A1  32
 #define PIN_A0  31
 
-#define PIN_D7  5
-#define PIN_D6  6
+#define PIN_D7  9
+#define PIN_D6  8
 #define PIN_D5  7
-#define PIN_D4  8
-#define PIN_D3  9
+#define PIN_D4  6
+#define PIN_D3  5
 #define PIN_D2  28
 #define PIN_D1  29
 #define PIN_D0  30
